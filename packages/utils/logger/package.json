@@ -1,0 +1,10 @@
+{
+  "name": "@peanutbutterporkchop/logger",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "module": "./index.js",
+  "main": "./index.js",
+  "devDependencies": {
+    "consola": "^2.15.3"
+  }
+}
