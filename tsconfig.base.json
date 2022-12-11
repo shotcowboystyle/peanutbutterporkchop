@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@peanutbutterporkchop/logger": ["packages/utils/logger/src/index.ts"]
+      "@peanutbutterporkchop/logger": ["packages/logger/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
