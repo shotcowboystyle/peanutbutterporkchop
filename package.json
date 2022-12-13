@@ -5,6 +5,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "pnpm dlx husky install",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
+    "lint:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
     "check:node-modules": "tsx ./tools/dev-scripts/cmd-check-node-modules.js",
     "nx": "nx",
     "nx:start": "nx serve",
@@ -58,6 +60,8 @@
     "tslib": "^2.3.0"
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint"
+    "**/*.{js,ts,vue,html}": [
+      "pnpm lint:fix"
+    ]
   }
 }

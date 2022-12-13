@@ -1,5 +1,14 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["consola"]
+  "cSpell.words": [
+    "commitlint",
+    "consola",
+    "jscutlery",
+    "nrwl",
+    "nuxt",
+    "nuxtjs",
+    "peanutbutterporkchop",
+    "preinstall"
+  ]
 }
