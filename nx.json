@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "peanutbutterporkchop",
+  "affected": {
+    "defaultBase": "main"
+  },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
@@ -18,6 +21,9 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "e2e": {
+      "inputs": ["default", "^production"]
+    },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
@@ -34,6 +40,9 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": [
+      "{workspaceRoot}/pnpm-workspace.yaml",
+      "{workspaceRoot}/pnpm-lock.yaml"
+    ]
   }
 }

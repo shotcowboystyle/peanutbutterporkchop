@@ -2,16 +2,29 @@
   "name": "peanutbutterporkchop",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "pnpm dlx husky install",
+    "check:node-modules": "tsx ./tools/dev-scripts/cmd-check-node-modules.js",
+    "nx": "nx",
+    "nx:start": "nx serve",
+    "nx:build": "nx run-many --target=build --all",
+    "nx:test": "nx run-many --target=test --all",
+    "nx:test:affected": "nx affected --target=test",
+    "nx:lint": "nx run-many --target=lint --all",
+    "nx:lint:affected": "nx affected --target=lint",
+    "nx:graph": "nx dep-graph",
+    "nx:graph:affected": "nx affected dep-graph"
+  },
   "private": true,
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "pnpm@7.18.1",
   "engines": {
     "node": ">=16.0.0"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@jscutlery/semver": "^2.29.2",
     "@nrwl/cli": "15.2.4",
     "@nrwl/eslint-plugin-nx": "15.2.4",
     "@nrwl/jest": "15.2.4",
@@ -23,14 +36,28 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "consola": "^2.15.3",
+    "cross-env": "^7.0.3",
+    "cross-spawn": "^7.0.3",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.2",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
+    "lint-staged": "^13.1.0",
     "nx": "15.2.4",
     "prettier": "^2.6.2",
     "ts-jest": "28.0.5",
+    "ts-loader": "^8.3.0",
     "ts-node": "10.9.1",
-    "typescript": "~4.8.2"
+    "tsx": "^3.12.1",
+    "typescript": "~4.8.2",
+    "yargs": "^17.6.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint"
   }
 }

@@ -29,10 +29,17 @@ node_modules
 /connect.lock
 /coverage
 /libpeerconnection.log
+/data/*
+!/data/.gitkeep
+**/*/certificates/*
+!**/*/certificates/.gitkeep
 npm-debug.log
 yarn-error.log
 testem.log
+*.history
+.history/*
 /typings
+*.env*
 
 # System Files
 .DS_Store

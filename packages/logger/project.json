@@ -1,32 +1,38 @@
 {
-  "name": "utils-logger",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/utils/logger/src",
+  "name": "logger",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/logger/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/utils/logger",
-        "main": "packages/utils/logger/src/index.ts",
-        "tsConfig": "packages/utils/logger/tsconfig.lib.json",
-        "assets": ["packages/utils/logger/*.md"]
+        "outputPath": "dist/packages/logger",
+        "main": "packages/logger/src/index.ts",
+        "tsConfig": "packages/logger/tsconfig.lib.json",
+        "assets": ["packages/logger/*.md"]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/utils/logger/**/*.ts"]
+        "lintFilePatterns": ["packages/logger/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/utils/logger/jest.config.ts",
+        "jestConfig": "packages/logger/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
       }
     }
   },

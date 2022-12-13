@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@peanutbutterporkchop/logger": ["packages/logger/src/index.ts"],
-    }
+      "@peanutbutterporkchop/logger": ["packages/logger/src/index.ts"]
+    },
+    "types": ["cypress", "node"]
   },
   "exclude": ["node_modules", "tmp"]
 }
