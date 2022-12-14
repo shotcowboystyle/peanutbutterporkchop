@@ -1,0 +1,79 @@
+{
+  "name": "portfolio",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/portfolio",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nuxt build"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nuxt dev"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nuxt generate"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nuxt preview"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node .output/server/index.mjs"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["serve dist/"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["rm -rf .nuxt dist .output"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "generate:locales": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/translator.js ./locales en.yml"],
+        "cwd": "apps/portfolio"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/portfolio/**/*.{ts,tsx,vue}"],
+        "fix": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
+    }
+  },
+  "tags": []
+}
