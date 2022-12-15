@@ -1,13 +1,13 @@
 {
   "name": "portfolio-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/portfolio-e2e/src",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tests/portfolio-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/portfolio-e2e/cypress.config.ts",
+        "cypressConfig": "apps/tests/portfolio-e2e/cypress.config.ts",
         "devServerTarget": "portfolio:serve",
         "testingType": "e2e"
       },
@@ -21,7 +21,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/portfolio-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/tests/portfolio-e2e/**/*.{js,ts}"]
       }
     }
   },

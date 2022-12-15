@@ -1,8 +1,8 @@
 {
   "extends": [
-    "../../.eslintrc.json",
     "@nuxtjs/eslint-config-typescript",
-    "plugin:nuxt/recommended"
+    "plugin:nuxt/recommended",
+    "../../../.eslintrc.json"
   ],
   "env": {
     "browser": true,
