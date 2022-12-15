@@ -1,70 +1,70 @@
 {
   "name": "portfolio",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/portfolio",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web/portfolio",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["nuxt build"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "dev": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["nuxt dev"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "generate": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["nuxt generate"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "preview": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["nuxt preview"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "start": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["node .output/server/index.mjs"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "serve": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["serve dist/"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "clean": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["rm -rf .nuxt dist .output"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "generate:locales": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["node tools/translator.js ./locales en.yml"],
-        "cwd": "apps/portfolio"
+        "cwd": "apps/web/portfolio"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/portfolio/**/*.{ts,tsx,vue}"],
+        "lintFilePatterns": ["apps/web/portfolio/**/*.{ts,tsx,vue}"],
         "fix": true
       }
     }

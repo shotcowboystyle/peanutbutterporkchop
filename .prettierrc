@@ -9,7 +9,6 @@
   "printWidth": 80,
   "bracketSpacing": true,
   "arrowParens": "always",
-  "endOfLine": "crlf",
   "insertFinalNewline": true
 }
 

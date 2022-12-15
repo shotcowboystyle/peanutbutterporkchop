@@ -1,5 +1,5 @@
-import UnpluginComponentsVite from 'unplugin-vue-components/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import UnpluginComponentsVite from 'unplugin-vue-components/vite';
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default {
@@ -29,7 +29,7 @@ export default {
     transpile: ['@headlessui/vue'],
   },
 
-  buildDir: '../../dist/portfolio/.nuxt',
+  buildDir: '../../../dist/apps/web/portfolio/.nuxt',
 
   // modules
   modules: [
@@ -41,7 +41,7 @@ export default {
     'nuxt-windicss',
   ],
 
-  modulesDir: ['../../node_modules'],
+  modulesDir: ['../../../node_modules'],
 
   // experimental features
   experimental: {
