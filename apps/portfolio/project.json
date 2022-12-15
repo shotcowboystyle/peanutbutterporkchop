@@ -67,13 +67,8 @@
         "lintFilePatterns": ["apps/portfolio/**/*.{ts,tsx,vue}"],
         "fix": true
       }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "conventional"
-      }
     }
   },
   "tags": []
 }
+

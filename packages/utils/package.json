@@ -1,0 +1,6 @@
+{
+  "name": "@peanutbutterporkchop/utils",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "types": "./src/lib/declaration.d.ts"
+}

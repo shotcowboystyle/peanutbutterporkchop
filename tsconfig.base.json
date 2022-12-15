@@ -8,14 +8,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2017",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@peanutbutterporkchop/logger": ["packages/logger/src/index.ts"]
+      "@peanutbutterporkchop/logger": ["packages/logger/src/index.ts"],
+      "@peanutbutterporkchop/utils": ["packages/utils/src/index.ts"]
     },
     "types": ["cypress", "node"]
   },

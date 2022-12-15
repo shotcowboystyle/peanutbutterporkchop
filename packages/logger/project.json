@@ -28,13 +28,8 @@
         "jestConfig": "packages/logger/jest.config.ts",
         "passWithNoTests": true
       }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "conventional"
-      }
     }
   },
   "tags": []
 }
+
