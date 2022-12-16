@@ -102,43 +102,40 @@ module.exports = {
 
     scopes: [
       {
-        name: 'design-system',
-        description:
-          "Anything related to the repository's design-system projects (ex: design-system/components, design-system/tokens, storybook, etc.)",
-        emoji: ':art:',
-      },
-      {
         name: 'tools',
         description:
           'Anything related to the helper projects in the tools/ directory',
         emoji: ':hammer_and_wrench:',
       },
       {
-        name: 'docs',
-        description: 'Anything related to the docusaurus site',
+        name: 'apps/api',
+        description: 'Anything related to any of the API services',
         emoji: ':memo:',
       },
-
       {
-        name: 'web-shell',
-        description: 'Anything related to the `web-shell` application',
+        name: 'apps/docs',
+        description: 'Anything related to a services docs site',
+        emoji: ':memo:',
+      },
+      {
+        name: 'apps/desktop',
+        description: 'Anything related to a desktop app',
         emoji: ':shell:',
       },
-      //{ "name": 'web-landing', "description": 'Anything related to the `web-landing` application', "emoji": ':house:' },
       {
-        name: 'shared',
-        description:
-          'Anything related to the `shared` applications and libraries',
+        name: 'apps/mobile',
+        description: 'Anything related to a mobile app',
         emoji: ':chains:',
       },
       {
-        name: 'message',
-        description: 'Anything related to the `message` domain',
+        name: 'apps/tests/portfolio-e2e',
+        description:
+          'Anything related to the portfolio web app`s e2e Cypress project',
         emoji: ':envelope:',
       },
       {
-        name: 'user-account',
-        description: 'Anything related to the `user-account` domain',
+        name: 'apps/web/portfolio',
+        description: 'Anything related to the Portfolio web app',
         emoji: ':lock:',
       },
 
