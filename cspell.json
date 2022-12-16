@@ -1,6 +1,7 @@
 {
   "words": [
     "asyncapi",
+    "breakline",
     "codecov",
     "codegen",
     "commitlint",
@@ -15,12 +16,15 @@
     "intlify",
     "jsbi",
     "jscutlery",
+    "noreply",
     "nrwl",
     "nuxt",
     "nuxtjs",
     "peanutbutterporkchop",
     "Persistor",
     "pinia",
+    "pnpm",
+    "Prefixs",
     "Prehydration",
     "preinstall",
     "rabbitmq",
