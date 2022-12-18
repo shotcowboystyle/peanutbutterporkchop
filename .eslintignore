@@ -4,3 +4,7 @@ apps/nuxt-client/storybook-static/
 node_modules/
 tests/coverage/
 
+components.d.ts
+nuxt.d.ts
+.nuxt
+.output

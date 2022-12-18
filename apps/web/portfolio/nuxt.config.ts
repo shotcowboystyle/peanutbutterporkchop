@@ -29,8 +29,6 @@ export default {
     transpile: ['@headlessui/vue'],
   },
 
-  buildDir: '../../../dist/apps/web/portfolio/.nuxt',
-
   // modules
   modules: [
     'unplugin-icons/nuxt',
@@ -40,8 +38,6 @@ export default {
     '@vueuse/nuxt',
     'nuxt-windicss',
   ],
-
-  modulesDir: ['../../../node_modules'],
 
   // experimental features
   experimental: {

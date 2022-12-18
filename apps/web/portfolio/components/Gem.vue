@@ -7,19 +7,19 @@ export default {
     };
   },
   async mounted() {
-    const THREE = await import('three').then(m => m.default || m);
+    const THREE = await import('three').then((m) => m.default || m);
     const { OrbitControls } = await import(
       'three/examples/jsm/controls/OrbitControls.js'
-    ).then(m => m.default || m);
+    ).then((m) => m.default || m);
     const { GLTFLoader } = await import(
       'three/examples/jsm/loaders/GLTFLoader.js'
-    ).then(m => m.default || m);
+    ).then((m) => m.default || m);
     // Canvas
     let canvas = document.querySelector('canvas.webgl');
 
     // wait
     while (!canvas) {
-      await new Promise(resolve => setTimeout(resolve, 50));
+      await new Promise((resolve) => setTimeout(resolve, 50));
       canvas = document.querySelector('canvas.webgl');
     }
 
@@ -52,14 +52,14 @@ export default {
     });
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xFFFFFF, 2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 3);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    const directionalLight2 = new THREE.DirectionalLight(0xFFFFFF, 3);
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 3);
     directionalLight2.position.set(-1, -1, -1);
     scene.add(directionalLight2);
 
@@ -74,7 +74,7 @@ export default {
       75,
       sizes.width / sizes.height,
       0.1,
-      100
+      100,
     );
     camera.position.set(2, 2, 6);
     scene.add(camera);

@@ -1,16 +1,16 @@
-import { defineConfig } from 'windicss/helpers'
-import type { Plugin } from 'windicss/types/interfaces'
+import { defineConfig } from 'windicss/helpers';
+import type { Plugin } from 'windicss/types/interfaces';
 
 // colors
-import colors from 'windicss/colors'
+import colors from 'windicss/colors';
 
 // themes
-import defaultTheme from 'windicss/defaultTheme'
+import defaultTheme from 'windicss/defaultTheme';
 
 // plugins
-import TypographyPlugin from 'windicss/plugin/typography'
-import AspectRatioPlugin from 'windicss/plugin/aspect-ratio'
-import FiltersPlugin from 'windicss/plugin/filters'
+import TypographyPlugin from 'windicss/plugin/typography';
+import AspectRatioPlugin from 'windicss/plugin/aspect-ratio';
+import FiltersPlugin from 'windicss/plugin/filters';
 
 const MyTheme = {
   colors: {
@@ -54,7 +54,7 @@ const MyTheme = {
       900: '#830000',
     },
   },
-}
+};
 
 export default defineConfig({
   darkMode: 'class',
@@ -100,4 +100,4 @@ export default defineConfig({
     TypographyPlugin as Plugin,
     AspectRatioPlugin as Plugin,
   ] as Plugin[],
-})
+});

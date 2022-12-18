@@ -4,4 +4,4 @@ export default defineAppConfig({
     name: 'viandwi24',
     link: 'https://github.com/viandwi24',
   },
-})
+});

@@ -8,11 +8,11 @@ const props = defineProps({
     type: String,
     default: '',
   },
-})
+});
 
 const { data } = await useAsyncData(props.path, () =>
-  queryContent(props.path).findOne()
-)
+  queryContent(props.path).findOne(),
+);
 </script>
 
 <template>

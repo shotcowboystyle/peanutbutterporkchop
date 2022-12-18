@@ -1,6 +1,6 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "../../../dist/web/portfolio/.nuxt/tsconfig.json",
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "strict": true,
     "skipLibCheck": true,
