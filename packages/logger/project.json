@@ -28,8 +28,16 @@
         "jestConfig": "packages/logger/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "npm": false,
+        "changelog": true,
+        "tagFormat": "@peanutbutterporkchop/logger-v${VERSION}"
+      }
     }
   },
   "tags": []
 }
-

@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export interface IIdentityState {
-  firstName: string
-  lastName: string
+  firstName: string;
+  lastName: string;
 }
 
 export const useIdentity = defineStore('identity', {
@@ -12,19 +12,19 @@ export const useIdentity = defineStore('identity', {
   }),
   actions: {
     setFirstName(firstName: string) {
-      this.firstName = firstName
+      this.firstName = firstName;
     },
     setLastName(lastName: string) {
-      this.lastName = lastName
+      this.lastName = lastName;
     },
     reset() {
-      this.firstName = 'Alfian'
-      this.lastName = 'Dwi'
+      this.firstName = 'Alfian';
+      this.lastName = 'Dwi';
     },
   },
   getters: {
     fullName(): string {
-      return `${this.firstName} ${this.lastName}`
+      return `${this.firstName} ${this.lastName}`;
     },
   },
-})
+});

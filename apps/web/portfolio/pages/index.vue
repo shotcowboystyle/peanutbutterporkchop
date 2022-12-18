@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 // composable
-const { t } = useLang()
+const { t } = useLang();
 
 // meta
 definePageMeta({
   layout: 'page',
-})
+});
 
 // vars
-const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'))
+const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'));
 const leadingsText = computed(() => [
   {
     text: titlesText.value[0],
@@ -28,36 +28,37 @@ const leadingsText = computed(() => [
     endColor: '#F9CB28',
     delay: 4,
   },
-])
-const tooltip = ref(false)
+]);
+const tooltip = ref(false);
 
 // const
 const cancelTooltip = () => {
-  tooltip.value = false
-  const tt = document.querySelector('.tooltiptext')
-  if (tt) { tt.innerHTML = 'Copy to clipboard' }
-}
+  tooltip.value = false;
+  const tt = document.querySelector('.tooltiptext');
+  if (tt) {
+    tt.innerHTML = 'Copy to clipboard';
+  }
+};
 const copyBash = () => {
-  const bash = 'git clone https://github.com/viandwi24/nuxt3-awesome-starter'
-  navigator.clipboard.writeText(bash)
-  tooltip.value = true
-  const tt = document.querySelector('.tooltiptext')
-  if (tt) { tt.innerHTML = 'Copied!!!' }
-}
+  const bash = 'git clone https://github.com/viandwi24/nuxt3-awesome-starter';
+  navigator.clipboard.writeText(bash);
+  tooltip.value = true;
+  const tt = document.querySelector('.tooltiptext');
+  if (tt) {
+    tt.innerHTML = 'Copied!!!';
+  }
+};
 </script>
 
 <template>
   <PageWrapper class="flex-1 flex">
     <div class="background-overlay">
       <div
-        class="absolute top-0 left-0 transform translate-x-64 translate-y-4 h-14 w-14 rounded-full bg-gray-900 dark:bg-white"
-      />
+        class="absolute top-0 left-0 transform translate-x-64 translate-y-4 h-14 w-14 rounded-full bg-gray-900 dark:bg-white" />
       <div
-        class="absolute hidden md:block top-0 left-0 transform translate-x-18 translate-y-20 h-28 w-28 rounded-full bg-blue-600 linear-wipe"
-      />
+        class="absolute hidden md:block top-0 left-0 transform translate-x-18 translate-y-20 h-28 w-28 rounded-full bg-blue-600 linear-wipe" />
       <div
-        class="absolute hidden md:block bottom-0 right-0 transform -translate-x-4 -translate-y-40 h-16 w-16 rounded bg-purple-600 linear-wipe"
-      />
+        class="absolute hidden md:block bottom-0 right-0 transform -translate-x-4 -translate-y-40 h-16 w-16 rounded bg-purple-600 linear-wipe" />
       <div class="absolute bottom-0 right-0 triangle-shape" />
     </div>
     <PageBody class="flex-1 flex">
@@ -72,50 +73,42 @@ const copyBash = () => {
               }; --end-color: ${item.endColor}; --animation-name: anim-fg-${
                 i + 1
               }`"
-              class="animated-text-bg drop-shadow-xl text-5xl xl:text-8xl 2xl:text-9xl block font-black uppercase"
-            >
+              class="animated-text-bg drop-shadow-xl text-5xl xl:text-8xl 2xl:text-9xl block font-black uppercase">
               <span class="animated-text-fg">{{ item.text }}</span>
             </span>
           </h1>
           <div
-            class="flex space-x-4 ml-4 mt-10 justify-center md:justify-start"
-          >
+            class="flex space-x-4 ml-4 mt-10 justify-center md:justify-start">
             <Button
               size="lg"
               text="Nuxt 3"
               class="font-extrabold"
-              href="https://v3.nuxtjs.org"
-            />
+              href="https://v3.nuxtjs.org" />
             <Button
               size="lg"
               text="Github"
               type="secondary"
               class="font-extrabold"
-              href="https://github.com/viandwi24/nuxt3-awesome-starter"
-            />
+              href="https://github.com/viandwi24/nuxt3-awesome-starter" />
           </div>
         </div>
         <div class="hidden md:flex md:w-3/8 justify-center items-end relative">
           <Gem class="absolute -top-64 -right-0" />
           <div class="ml-4 w-100 z-10 h-auto shadow">
             <div
-              class="win-header bg-gray-200 dark:bg-slate-800 flex flex space-x-4 px-3 py-2 rounded-t-lg relative border-b-2 border-gray-300/75 dark:border-slate-700/75"
-            >
+              class="win-header bg-gray-200 dark:bg-slate-800 flex flex space-x-4 px-3 py-2 rounded-t-lg relative border-b-2 border-gray-300/75 dark:border-slate-700/75">
               <div class="win-controls flex space-x-1 items-center">
                 <div class="w-3 h-3 bg-red-500 rounded-full" />
                 <div class="w-3 h-3 bg-green-500 rounded-full" />
                 <div class="w-3 h-3 bg-yellow-500 rounded-full" />
               </div>
-              <div class="flex-1 font-bold text-center pr-12 text-sm">
-                BASH
-              </div>
+              <div class="flex-1 font-bold text-center pr-12 text-sm">BASH</div>
               <div class="text-sm flex justify-center items-center">
                 <div class="tooltip">
                   <button
                     class="text-gray-100 flex justify-center items-center"
                     @click="copyBash"
-                    @mouseout="cancelTooltip"
-                  >
+                    @mouseout="cancelTooltip">
                     <span class="tooltiptext">Copy to clipboard</span>
                     <icon-material-symbols:content-copy-outline />
                   </button>
@@ -123,8 +116,7 @@ const copyBash = () => {
               </div>
             </div>
             <div
-              class="win-body rounded-b-lg bg-gray-200/90 dark:bg-slate-800/90 px-3 py-2 font-mono backdrop-filter backdrop-blur-lg"
-            >
+              class="win-body rounded-b-lg bg-gray-200/90 dark:bg-slate-800/90 px-3 py-2 font-mono backdrop-filter backdrop-blur-lg">
               <div>
                 $ git clone https://github.com/viandwi24/nuxt3-awesome-starter
               </div>

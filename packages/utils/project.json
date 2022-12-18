@@ -35,7 +35,7 @@
           "github": true,
           "npm": false,
           "changelog": true,
-          "tagFormat": "core-typescript-utilities-v${VERSION}"
+          "tagFormat": "@peanutbutterporkchop/utils-v${VERSION}"
         }
       }
     }

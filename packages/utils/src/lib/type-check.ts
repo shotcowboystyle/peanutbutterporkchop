@@ -3,8 +3,7 @@ import {
   isNumber as isNumberExternal,
   isObject as isObjectExternal,
   isSymbol as isSymbolExternal,
-} from "radash";
-import { MutableRefObject } from "react";
+} from 'radash';
 
 /**
  * Check if the provided value's type is `number`
@@ -14,7 +13,7 @@ import { MutableRefObject } from "react";
 export const isNumber = (obj: unknown): obj is number => {
   try {
     return (
-      obj instanceof Number || typeof obj === "number" || isNumberExternal(obj)
+      obj instanceof Number || typeof obj === 'number' || isNumberExternal(obj)
     );
   } catch (e) {
     return false;
@@ -29,7 +28,7 @@ export const isNumber = (obj: unknown): obj is number => {
 export const isSymbol = (obj: unknown): obj is symbol => {
   try {
     return (
-      obj instanceof Symbol || typeof obj === "symbol" || isSymbolExternal(obj)
+      obj instanceof Symbol || typeof obj === 'symbol' || isSymbolExternal(obj)
     );
   } catch (e) {
     return false;
@@ -44,7 +43,7 @@ export const isSymbol = (obj: unknown): obj is symbol => {
  */
 const getTag = (obj: unknown): string => {
   if (obj == null) {
-    return obj === undefined ? "[object Undefined]" : "[object Null]";
+    return obj === undefined ? '[object Undefined]' : '[object Null]';
   }
   return Object.prototype.toString.call(obj);
 };
@@ -70,7 +69,7 @@ const getTag = (obj: unknown): string => {
  * // => false
  */
 const isObjectLike = (obj: unknown) => {
-  return typeof obj === "object" && obj !== null;
+  return typeof obj === 'object' && obj !== null;
 };
 
 /**
@@ -98,7 +97,7 @@ const isObjectLike = (obj: unknown) => {
  * // => true
  */
 export const isPlainObject = (obj: unknown) => {
-  if (!isObjectLike(obj) || getTag(obj) != "[object Object]") {
+  if (!isObjectLike(obj) || getTag(obj) != '[object Object]') {
     return false;
   }
   if (Object.getPrototypeOf(obj) === null) {
@@ -156,12 +155,12 @@ export const isEmptyObject = (obj: unknown) => {
  * @returns An indicator specifying if the value provided is of type `Function`
  */
 export const isFunction = (
-  obj: unknown
+  obj: unknown,
 ): obj is (params?: unknown) => unknown => {
   try {
     return (
       obj instanceof Function ||
-      typeof obj === "function" ||
+      typeof obj === 'function' ||
       isFunctionExternal(obj)
     );
   } catch (e) {
@@ -186,23 +185,8 @@ export const isPromise = (value: unknown): value is Promise<unknown> => {
 export const isSelectOption = (obj: unknown): obj is SelectOption => {
   try {
     return (
-      !isEmpty((obj as SelectOption)?.name) && "value" in (obj as SelectOption)
+      !isEmpty((obj as SelectOption)?.name) && 'value' in (obj as SelectOption)
     );
-  } catch (e) {
-    return false;
-  }
-};
-
-/**
- * Check if the provided value's type is a ref
- * @param obj - The value to type check
- * @returns An indicator specifying if the object provided is of type ref
- */
-export const isRef = <TRef = unknown>(
-  obj: unknown
-): obj is MutableRefObject<TRef> => {
-  try {
-    return (obj as MutableRefObject<TRef>)?.current !== undefined;
   } catch (e) {
     return false;
   }
@@ -229,10 +213,10 @@ export const isError = (obj: unknown): obj is Error => {
 
   const tag = getTag(obj);
   return (
-    tag == "[object Error]" ||
-    tag == "[object DOMException]" ||
-    (typeof (obj as Error)?.message === "string" &&
-      typeof (obj as Error)?.name === "string" &&
+    tag == '[object Error]' ||
+    tag == '[object DOMException]' ||
+    (typeof (obj as Error)?.message === 'string' &&
+      typeof (obj as Error)?.name === 'string' &&
       !isPlainObject(obj))
   );
 };
@@ -251,7 +235,7 @@ export const isError = (obj: unknown): obj is Error => {
  * // => false
  */
 export const isDate = (obj: unknown): obj is Date =>
-  isObjectLike(obj) && getTag(obj) == "[object Date]";
+  isObjectLike(obj) && getTag(obj) == '[object Date]';
 
 /**
  * Checks if `obj` is classified as a `bigint` object.
@@ -267,4 +251,4 @@ export const isDate = (obj: unknown): obj is Date =>
  * // => false
  */
 export const isBigInt = (obj: unknown): obj is bigint =>
-  typeof obj === "bigint" || getTag(obj) == "[object BigInt]";
+  typeof obj === 'bigint' || getTag(obj) == '[object BigInt]';
